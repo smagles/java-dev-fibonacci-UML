@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Initialize Map<Integer, Long> memo;
+if (n<=1) then (true)
+  :return n;
+else (false)
+    if (memo contains n) then (true)
+           :return memo.get(n);
+    else (false)
+        :Call fibonacci(n - 1);
+        :Call fibonacci(n - 2);
+        :fib = fibonacci(n - 1) + fibonacci(n - 2);
+        :Store fib in memo;
+        :Return fib;
+  endif
+endif
+
+stop
+
+@enduml

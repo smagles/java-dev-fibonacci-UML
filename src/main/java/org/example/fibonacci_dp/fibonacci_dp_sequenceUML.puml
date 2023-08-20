@@ -1,0 +1,27 @@
+@startuml
+actor User
+
+User -> FibonacciDP: fibonacci(n: int)
+activate FibonacciDP
+
+FibonacciDP -> FibonacciDP: Check n <= 1?
+alt n <= 1
+    FibonacciDP --> User: Return n
+else
+    FibonacciDP -> FibonacciDP: Check memo contains n?
+    alt n is in memo
+        FibonacciDP --> User: Return memo[n]
+    else
+        FibonacciDP -> FibonacciDP: Call fibonacci(n - 1)
+        activate FibonacciDP
+        FibonacciDP -> FibonacciDP: Call fibonacci(n - 2)
+        activate FibonacciDP
+        FibonacciDP --> FibonacciDP: Calculate fib = fibonacci(n - 1) + fibonacci(n - 2)
+        FibonacciDP -> FibonacciDP: Store fib in memo[n]
+        FibonacciDP --> User: Return fib
+        deactivate FibonacciDP
+    end
+    deactivate FibonacciDP
+end
+deactivate FibonacciDP
+@enduml

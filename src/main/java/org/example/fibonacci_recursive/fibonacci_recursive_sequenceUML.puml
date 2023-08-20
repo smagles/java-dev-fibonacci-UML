@@ -1,0 +1,21 @@
+@startuml
+actor User
+
+User -> FibonacciRecursive: fibonacci(n: int)
+activate FibonacciRecursive
+
+FibonacciRecursive -> FibonacciRecursive: Check n <= 1?
+alt n <= 1
+    FibonacciRecursive --> User: Return n
+else
+    FibonacciRecursive -> FibonacciRecursive: Call fibonacci(n - 1)
+    activate FibonacciRecursive
+    FibonacciRecursive -> FibonacciRecursive: Call fibonacci(n - 2)
+    activate FibonacciRecursive
+    FibonacciRecursive --> FibonacciRecursive: Return fibonacci(n - 1) + fibonacci(n - 2)
+    deactivate FibonacciRecursive
+    deactivate FibonacciRecursive
+    FibonacciRecursive --> User: Return fibonacci(n - 1) + fibonacci(n - 2)
+end
+deactivate FibonacciRecursive
+@enduml

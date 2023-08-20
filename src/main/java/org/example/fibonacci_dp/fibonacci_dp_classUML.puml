@@ -1,0 +1,14 @@
+@startuml
+interface Fibonacci {
+    + fibonacci(n: int): long
+}
+class FibonacciDP {
+    - static memo: Map<Integer, Long>
+    + fibonacci(n: int): long
+}
+class Map<K, V> {
+    + containsKey(key: K): boolean
+    + get(key: K): V
+    + put(key: K, value: V): V
+}
+@enduml

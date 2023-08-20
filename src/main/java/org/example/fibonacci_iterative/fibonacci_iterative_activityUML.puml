@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+if (n<0) then (true)
+ : Throw IllegalArgumentException;
+ else (false)
+    if (n <= 1) then (true)
+        :Return n;
+    else (false)
+        :Initialize current = 0;
+        :Initialize previous1 = 0;
+        :Initialize previous2 = 1;
+        while (i < n) is (condition)
+            :current = previous1 + previous2;
+            :previous1 = previous2;
+            :previous2 = current;
+            :Increment i;
+        endwhile (false)
+        :Return current;
+    endif
+endif
+stop
+
+
+@enduml

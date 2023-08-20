@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+if (n <= 1) then (true)
+    :return n;
+else (false)
+    :Call fibonacci(n - 1);
+    :Call fibonacci(n - 2);
+    :return (fibonacci(n - 1) + fibonacci(n - 2));
+endif
+stop
+
+@enduml

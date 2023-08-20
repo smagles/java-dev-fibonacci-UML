@@ -1,0 +1,24 @@
+@startuml
+actor User
+
+User -> FibonacciIterative: fibonacci(n)
+activate FibonacciIterative
+
+FibonacciIterative -> FibonacciIterative: Check n < 0?
+alt n < 0
+    FibonacciIterative --> User: IllegalArgumentException
+else
+    FibonacciIterative -> FibonacciIterative: Check n <= 1?
+    alt n <= 1
+        FibonacciIterative --> User: Return n
+    else
+        FibonacciIterative -> FibonacciIterative: Initialize variables
+        loop i from 1 to n-1
+            FibonacciIterative -> FibonacciIterative: Calculate current = previous1 + previous2
+            FibonacciIterative -> FibonacciIterative: Update previous1 and previous2
+        end
+        FibonacciIterative --> User: Return current
+    end
+end
+deactivate FibonacciIterative
+@enduml
