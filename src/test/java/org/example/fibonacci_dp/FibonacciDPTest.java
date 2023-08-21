@@ -1,6 +1,5 @@
-package org.example.fibonacci;
+package org.example.fibonacci_dp;
 
-import org.example.fibonacci_dp.FibonacciDP;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

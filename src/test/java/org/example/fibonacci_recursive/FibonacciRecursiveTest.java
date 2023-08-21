@@ -1,4 +1,4 @@
-package org.example.fibonacci;
+package org.example.fibonacci_recursive;
 
 import org.example.fibonacci_recursive.FibonacciRecursive;
 import org.junit.jupiter.api.Test;

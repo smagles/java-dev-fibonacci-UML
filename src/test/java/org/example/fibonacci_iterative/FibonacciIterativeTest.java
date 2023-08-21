@@ -1,4 +1,4 @@
-package org.example.fibonacci;
+package org.example.fibonacci_iterative;
 
 import org.example.fibonacci_iterative.FibonacciIterative;
 import org.junit.jupiter.api.Test;
